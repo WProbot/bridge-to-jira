@@ -38,13 +38,17 @@ Note that all the setting information is stored locally on your wordpress server
 
 ## Frequently Asked Questions
 
-### Where are my sensitive Jira authentication information stored =
+### Where are my sensitive Jira authentication information stored
 
 Uniquely on your Wordpress instance.
 
-### What kind of Jira authentication methods can be used? =
+### What kind of Jira authentication methods can be used?
 
 Only the basic token authentication, the one that Jira recommends.
+
+### Is there any support available for this plugin?
+
+You are welcome to change this plugin in any way you like as stated by the GPL2 license. If interested in paid support then contact the company that published it [Snow Line Software](https://snowlinesoftware.com)
 
 ## Changelog
 
