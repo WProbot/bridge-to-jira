@@ -1,6 +1,6 @@
-=== Bridge To Jira ===
+# Bridge To Jira
 Contributors: ccosmin 
-Donate link: https://example.com/
+Donate link: https://snowlinesoftware.com
 Tags: comments, spam
 Requires at least: 4.6
 Tested up to: 5.2.2 
@@ -11,7 +11,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin presents issues stored in a Jira instance.
 
-== Description ==
+## Description
 
 Use this plugin in order to easily present in your posts Jira issues dynamically from a Jira instance.
 
@@ -21,7 +21,7 @@ Features:
 * Issues are presented in a table. Add one or more filters in the normal post by placing them between markers [JIRA] and [/JIRA]
 * The issue key is a link to the issue in the Jira instance
 
-== Installation ==
+## Installation
 
 In order to install the plugin you need to follow these steps:
 
@@ -36,31 +36,23 @@ The plugin settings require the below informations:
 
 Note that all the setting information is stored locally on your wordpress server and can be transmitted only to *your* Jira instance for authentication purposes.
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions
 
-= Where are my sensitive Jira authentication information stored =
+### Where are my sensitive Jira authentication information stored =
 
 Uniquely on your Wordpress instance.
 
-= What kind of Jira authentication methods can be used? =
+### What kind of Jira authentication methods can be used? =
 
 Only the basic token authentication, the one that Jira recommends.
 
-== Screenshots ==
+## Changelog
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
-
-== Changelog ==
-
-= 1.0 =
+### 1.0
 Initial version.
 
-== Upgrade Notice ==
+## Upgrade Notice
 
-= 1.0 =
+### 1.0
 Initial version.
 
