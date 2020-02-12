@@ -60,3 +60,7 @@ Initial version.
 ### 1.0
 Initial version.
 
+## Screencast
+
+Here's below a video demonstration of the plugin features [here](https://www.youtube.com/embed/P4o_qTo6FxQ)
+
