@@ -34,6 +34,11 @@ function jo_list_of_jira_fields() {
   return $ret;
 }
 
+function echo_log($what)
+{
+  echo '<pre>'.print_r( $what, true ).'</pre>';
+}
+
 function jo_add_field_box()
 {
   $screens = ['post'];
@@ -111,6 +116,23 @@ function my_added_page_content ( $content )
 
     if ( ! empty($root) )
     {
+      if ( array_key_exists('errorMessages', $root) )
+      {
+        $output_error = '';
+        $error_messages = $root->errorMessages;
+        $output_error = $output_error . '<table>';
+        $output_error = $output_error . '<tr>';
+        $output_error = $output_error . '<th>Error</th>';
+        $output_error = $output_error . '</tr>';
+        foreach ( $error_messages as $error_message )
+        {
+          $output_error = $output_error . '<tr><td>' . $error_message . '</td></tr>';
+        }
+        $output_error = $output_error . '</table>';
+        return $output_error;
+      }
+
+      
       $issue_table = $issue_table . '<table>';
       $issue_table = $issue_table . '<tr>';
       $issue_table = $issue_table . '<th>key</th>';
