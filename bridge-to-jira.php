@@ -1,7 +1,29 @@
 <?php
 /**
-* Plugin Name: Bridge To Jira 
+* Plugin Name: Bridge To Jira
+* Description: A plugin for inspecting JIRA issues inside WordPress.
 **/
+
+if ( !function_exists('add_action') ) {
+  die("Hi there! I'm just a plugin not much I can do without WordPress loaded");
+}
+
+// Setup
+
+define('BTJ_PLUGIN_URL', __FILE__);
+
+// Includes
+
+include('includes/activate.php');
+include('includes/admin/init.php');
+include('includes/shortcodes/jira-filter.php');
+
+// Hooks
+register_activation_hook(__FILE__, 'btj_activate_plugin');
+add_action('admin_init', 'btj_admin_init');
+
+// Shortcodes
+add_shortcode('bridge-to-jira-filter', 'btj_jira_filter_shortcode');
 
 function jo_list_of_jira_fields() {
   $endpoint = get_option('jo_endpoint');
@@ -73,7 +95,7 @@ function jo_save_metadata($post_id)
 
 add_action('save_post', 'jo_save_metadata');
 
-function my_added_page_content ( $content ) 
+function my_added_page_content ( $content )
 {
   if ( is_single() ) {
     $post_id = get_the_ID();
@@ -132,7 +154,7 @@ function my_added_page_content ( $content )
         return $output_error;
       }
 
-      
+
       $issue_table = $issue_table . '<table>';
       $issue_table = $issue_table . '<tr>';
       $issue_table = $issue_table . '<th>key</th>';
@@ -155,7 +177,7 @@ function my_added_page_content ( $content )
                 $has_name = array_key_exists('name', $field);
                 if ( $has_name ) {
                   $td = $td . $field->name;
-                }  
+                }
               }
             }
             $td = $td . '</td>';
@@ -190,11 +212,11 @@ function plugin_options_page() {
     <form action="options.php" method="post">
     <?php settings_fields('jo-options'); ?>
     <?php do_settings_sections('jo-options'); ?>
- 
+
     <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
     </form>
 </div>
- 
+
 <?php
 }
 
