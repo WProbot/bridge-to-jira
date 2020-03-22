@@ -75,6 +75,9 @@ You are welcome to change this plugin in any way you like as stated by the GPL2 
 
 ## Changelog
 
+### 2.0
+Adding the "bridge-to-jira" shortcode.
+
 ### 1.0
 Initial version.
 
