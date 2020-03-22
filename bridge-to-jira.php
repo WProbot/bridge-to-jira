@@ -2,6 +2,7 @@
 /**
 * Plugin Name: Bridge To Jira
 * Description: A plugin for inspecting JIRA issues inside WordPress.
+* Version: 2.0
 **/
 
 if ( !function_exists('add_action') ) {
