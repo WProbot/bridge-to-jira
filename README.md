@@ -1,9 +1,9 @@
 # Bridge To Jira
-Contributors: ccosmin 
+Contributors: ccosmin
 Donate link: https://snowlinesoftware.com
 Tags: comments, spam
 Requires at least: 4.6
-Tested up to: 5.2.2 
+Tested up to: 5.2.2
 Requires PHP: 5.2.4
 Stable tag: trunk
 License: GPLv2
@@ -35,6 +35,29 @@ The plugin settings require the below informations:
 * Password: this is a basic authentication token needed in order to communicate with Jira. Instructions on how to generate this token can be found here: https://confluence.atlassian.com/cloud/api-tokens-938839638.html
 
 Note that all the setting information is stored locally on your wordpress server and can be transmitted only to *your* Jira instance for authentication purposes.
+
+## Use
+
+### As shortcode.
+
+The plugin publishes shortcode "bridge-to-jira-filter". Execution of this shortcode results in a
+table of JIRA issues.
+
+The shortcode has as parameters:
+* attribute: "fields" -> contains a comma-separated list of JIRA field keys (like: "summary", "status") that will
+be shown as columns in the resulting table;
+* content: the actual JQL filter that is sent to JIRA for evaluation. If empty then all the JIRA issues are returned.
+
+Example:
+
+* shortcode below shows summary and status for all issues:
+```
+[bridge-to-jira-filter fields="summary,status"][/bridge-to-jira-filter]
+```
+* shortcode below shows summary and status but only for the issues which have a status Done:
+```
+[bridge-to-jira-filter fields="summary,status"]status = Done[/bridge-to-jira-filter]
+```
 
 ## Frequently Asked Questions
 
